@@ -14,8 +14,8 @@ Gem::Specification.new do |spec|
   spec.description = "Adds liking, following, reporting, and blocking functionality to Rails applications"
   spec.license     = "MIT"
   spec.post_install_message = %q{
-    Don't forget to copy the migrations with 'rails g social_media:install:migrations', and to also include the
-    relevant modules into their respective models
+    Don't forget to copy the migrations with 'rails g social_media:install:migrations' after ensuring the '.owner_class'
+    is defined as the model you wish. And to also include the relevant modules into their respective models
   }
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
