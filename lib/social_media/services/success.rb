@@ -1,10 +1,12 @@
 module SocialMedia
-  class Success
-    attr_reader :object
+  module Services
+    class Success
+      attr_reader :object
 
-    def call(object)
-      yield(object)
+      def call(object)
+        yield(object)
+      end
+
     end
-    
   end
 end

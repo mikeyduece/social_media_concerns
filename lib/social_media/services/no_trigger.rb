@@ -1,8 +1,10 @@
 module SocialMedia
-  class NoTrigger
+  module Services
+    class NoTrigger
 
-    def call
+      def call
+      end
+
     end
-
   end
 end
