@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     social_media (0.1.0)
-      rails (~> 6.0.3, >= 6.0.3.1)
+      rails (>= 5.0.0)
 
 GEM
   remote: https://rubygems.org/
