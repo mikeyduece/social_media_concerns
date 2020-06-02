@@ -1,7 +1,8 @@
+require '../base_service.'
 module SocialMedia
   module Services
     module Likes
-      class Create < BaseService
+      class Create < ::BaseService
 
         def call(&block)
           like = create_like
