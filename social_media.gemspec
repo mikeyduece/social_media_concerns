@@ -13,10 +13,7 @@ Gem::Specification.new do |spec|
   spec.summary     = "Add social media functionality to Rails applications"
   spec.description = "Adds liking, following, reporting, and blocking functionality to Rails applications"
   spec.license     = "MIT"
-  spec.post_install_message = %q{
-    Don't forget to copy the migrations with 'rails g social_media:install:migrations' after ensuring the '.owner_class'
-    is defined as the model you wish. And to also include the relevant modules into their respective models
-  }
+  spec.post_install_message = %q{Don't forget to copy the migrations with 'rails ocial_media:install:migrations', and to also include the relevant modules into their respective models}
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
