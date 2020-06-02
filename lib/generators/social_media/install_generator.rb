@@ -1,6 +1,5 @@
 require 'rails/generators'
 require 'rails/generators/migration'
-require 'generators/orm_helpers'
 
 module SocialMedia
   class InstallGenerator < Rails::Generators::Base
