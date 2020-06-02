@@ -3,19 +3,22 @@ module SocialMedia
     belongs_to :target, polymorphic: true
     belongs_to :owner, polymorphic: true
 
-    after_commit :increment_number_of_likes, on: :create
+    before_commit :raise_already_liked_error_if_required, on: :create
+    before_commit :raise_not_implemented_error_if_requried, on: :create
+    before_commit :increment_number_of_likes, on: :create
     before_destroy :decrement_number_of_likes
+
 
     private
 
     def increment_number_of_likes
-      raise_error_if_requried
+      raise_not_implemented_error_if_requried
 
       update_like_count(:+)
     end
 
     def decrement_number_of_likes
-      raise_error_if_requried
+      raise_not_implemented_error_if_requried
 
       update_like_count(:-)
     end
@@ -28,8 +31,12 @@ module SocialMedia
 
     private
 
-    def raise_error_if_requried
+    def raise_not_implemented_error_if_requried
       raise NotImplementedError.new('You must add a #number_of_likes column to the model you wish to "Like"') unless target.respond_to?(:number_of_likes)
+    end
+
+    def raise_already_liked_error_if_required
+      raise SocialMedia::Likes::AlreadyExistsError if owner.likeable_objects.exists?(target: target)
     end
   end
 end
