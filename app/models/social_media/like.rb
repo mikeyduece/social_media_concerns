@@ -8,7 +8,7 @@ module SocialMedia
     before_commit :increment_number_of_likes, on: :create
     before_destroy :decrement_number_of_likes
 
-    validates :target_id, uniqueness: {scope: %i[target_type owner_id owner_type], message: "{{target_id}} has already been liked."}
+    validates :target_id, uniqueness: {scope: %i[target_type owner_id owner_type], message: "has already been liked."}
 
 
     private
