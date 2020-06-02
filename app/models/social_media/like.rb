@@ -38,7 +38,7 @@ module SocialMedia
     end
 
     def raise_already_liked_error_if_required
-      raise SocialMedia::Likes::AlreadyExistsError if owner.likeable_objects.exists?(target: target)
+      raise SocialMedia::Likes::AlreadyExistsError.new("#{owner_type} has already liked that #{target_type}") if owner.likeable_objects.exists?(target: target)
     end
   end
 end
