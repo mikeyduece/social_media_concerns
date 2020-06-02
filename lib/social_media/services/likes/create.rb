@@ -16,8 +16,6 @@ module SocialMedia
         private
 
         def create_like
-          raise SocialMedia::Likes::AlreadyExistsError if owner.likeable_object.exists?(target: target)
-
           owner.likeable_objects.create(target: target)
         end
 
