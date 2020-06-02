@@ -8,6 +8,8 @@ module SocialMedia
     before_commit :increment_number_of_likes, on: :create
     before_destroy :decrement_number_of_likes
 
+    validates :target_id, uniqueness: {scope: %i[target_type owner_id owner_type]}
+
 
     private
 
