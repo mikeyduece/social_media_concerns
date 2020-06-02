@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.version     = SocialMedia::VERSION
   spec.authors     = ["Mike Heft"]
   spec.email       = ["mikeheft@gmail.com"]
-  spec.homepage    = "TODO"
-  spec.summary     = "TODO: Summary of SocialMedia."
-  spec.description = "TODO: Description of SocialMedia."
+  spec.homepage    = "https://github.com/mikeyduece/social_media"
+  spec.summary     = "Add social media functionality to Rails applications"
+  spec.description = "Adds liking, following, reporting, and blocking functionality to Rails applications"
   spec.license     = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
