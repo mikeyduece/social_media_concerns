@@ -7,15 +7,18 @@ module SocialMedia
 
         def call(&block)
           like = create_like
+
           yield(Success.new(like), NoTrigger)
         rescue SocialMedia::Likes::AlreadyExistsError, StandardError => e
-          yield(NoTrigger, e)
+          yield(NoTrigger, Failure.new(e))
         end
 
         private
 
         def create_like
-          user.likeable_objects.create(target: target)
+          raise SocialMedia::Likes::AlreadyExistsError if owner.likeable_object.exists?(target: target)
+
+          owner.likeable_objects.create(target: target)
         end
 
       end

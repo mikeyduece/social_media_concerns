@@ -3,7 +3,7 @@ module SocialMedia
     class BaseService
       attr_reader :user, :params
 
-      def self.call(user, params = nil, &block)
+      def self.call(params, &block)
         new(user, params).call(&block)
       end
 
@@ -25,6 +25,13 @@ module SocialMedia
         raise ActiveRecord::RecordNotFound unless target
 
         target
+      end
+
+      def owner
+        owner = SocialMedia.owner_class.find_by(id: params[:owner_id])
+        raise ActiveRecord::RecordNotFound unless owner
+
+        owner
       end
 
     end

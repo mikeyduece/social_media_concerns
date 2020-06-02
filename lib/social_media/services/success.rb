@@ -3,7 +3,11 @@ module SocialMedia
     class Success
       attr_reader :object
 
-      def call(object)
+      def initialize(object)
+        @object = object
+      end
+
+      def call(&block)
         yield(object)
       end
 
