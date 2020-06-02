@@ -1,5 +1,3 @@
-require '../services/base_service'
-
 module SocialMedia
   module Services
     module Likes
