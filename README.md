@@ -1,8 +1,5 @@
 # SocialMedia
-Short description and motivation.
-
-## Usage
-How to use my plugin.
+Add social media functionality such as liking, following, reporting, and blocking to your Rails application.
 
 ## Installation
 Add this line to your application's Gemfile:
@@ -20,6 +17,16 @@ Or install it yourself as:
 ```bash
 $ gem install social_media
 ```
+
+## Usage
+After installing the gem in your application, you need to copy the migrations from the gem to your application:
+```bash
+rails social_media:install:migrations
+```
+
+This will copy the namespaced migrations for the models in the gem to your app.
+
+
 
 ## Contributing
 Contribution directions go here.
