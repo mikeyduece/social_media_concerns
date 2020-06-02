@@ -1,8 +1,3 @@
-require '../base_service'
-require '../success'
-require '../failure'
-require '../no_trigger'
-
 module SocialMedia
   module Likes
     class Create < BaseService
