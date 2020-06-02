@@ -9,10 +9,11 @@ Gem::Specification.new do |spec|
   spec.version     = SocialMedia::VERSION
   spec.authors     = ["Mike Heft"]
   spec.email       = ["mikeheft@gmail.com"]
-  spec.homepage    = "TODO"
-  spec.summary     = "TODO: Summary of SocialMedia."
-  spec.description = "TODO: Description of SocialMedia."
+  spec.homepage    = "https://github.com/mikeyduece/social_media"
+  spec.summary     = "Add social media functionality to Rails applications"
+  spec.description = "Adds liking, following, reporting, and blocking functionality to Rails applications"
   spec.license     = "MIT"
+  spec.post_install_message = %q{Don't forget to copy the migrations with 'rails ocial_media:install:migrations', and to also include the relevant modules into their respective models}
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
@@ -25,7 +26,7 @@ Gem::Specification.new do |spec|
 
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
-  spec.add_dependency "rails", "~> 6.0.3", ">= 6.0.3.1"
+  spec.add_dependency "rails", ">= 5.0.0"
 
   spec.add_development_dependency "sqlite3"
 end

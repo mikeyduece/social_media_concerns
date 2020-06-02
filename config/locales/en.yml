@@ -1,0 +1,10 @@
+en:
+  activerecord:
+    attributes:
+      social_media_like:
+        target_id: '%{target_class}'
+    errors:
+      models:
+        social_media_like:
+          target_id:
+            taken: 'has already been liked.'
