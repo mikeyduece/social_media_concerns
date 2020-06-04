@@ -1,3 +1,3 @@
 SocialMedia::Engine.routes.draw do
-  resources :likes
+  resources :likes, only: %i[create destroy]
 end
