@@ -17,13 +17,13 @@ module SocialMedia
     private
 
     def increment_number_of_follows
-      raise_not_implemented_error_if_requried
+      raise_not_implemented_error_if_required
 
       update_count(:number_of_follows, :+)
     end
 
     def decrement_number_of_follows
-      raise_not_implemented_error_if_requried
+      raise_not_implemented_error_if_required
 
       update_count(:number_of_follows, :-)
     end
