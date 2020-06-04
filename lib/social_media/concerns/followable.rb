@@ -9,7 +9,7 @@ module SocialMedia
       end
 
       class_methods do
-        def likeable(*attributes)
+        def followable(*attributes)
           attributes = [attributes] unless attributes.is_a?(Array)
 
           attributes.each do |attribute|
@@ -18,7 +18,7 @@ module SocialMedia
           end
         end
 
-        def liker(*attributes)
+        def follower(*attributes)
           attributes = [attributes] unless attributes.is_a?(Array)
 
           attributes.each do |attribute|
