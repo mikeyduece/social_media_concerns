@@ -9,7 +9,7 @@ module SocialMedia
           followed_object = create_followed_object
 
           yield(Success.new(followed_object), NoTrigger)
-        rescue ActiveRecord::NotFoundError, SocialMedia::Likes::AlreadyExistsError, StandardError => e
+        rescue ActiveRecord::NotFoundError, SocialMedia::Follows::AlreadyExistsError, StandardError => e
           yield(NoTrigger, Failure.new(e))
         end
 
