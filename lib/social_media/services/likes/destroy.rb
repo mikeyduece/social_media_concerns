@@ -9,14 +9,17 @@ module SocialMedia
           liked_object = like_to_be_destroyed
 
           yield(Success.new(liked_object), NoTrigger)
-        rescue SocialMedia::Likes::AlreadyExistsError, StandardError => e
+        rescue ActiveRecord::NotFoundError, StandardError => e
           yield(NoTrigger, Failure.new(e))
         end
 
         private
 
         def like
-          owner.likeable_objects.find_by(target: target)
+          like = owner.likeable_objects.find_by(target: target)
+          raise ActiveRecord::NotFoundError unless like
+
+          like
         end
 
         def like_to_be_destroyed

@@ -9,7 +9,7 @@ module SocialMedia
           blocked_object = destroy_blocked_object
 
           yield(Success.new(blocked_object), NoTrigger)
-        rescue ActiveRecord::NotFoundError, SocialMedia::Blocks::AlreadyExistsError, StandardError => e
+        rescue ActiveRecord::NotFoundError,  StandardError => e
           yield(NoTrigger, Failure.new(e))
         end
 
