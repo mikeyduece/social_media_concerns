@@ -7,7 +7,6 @@ module SocialMedia
 
     validates :target_id, uniqueness: {scope: %i[target_type owner_id owner_type], message: "has already been blocked."}
 
-
     private
 
     def raise_already_followd_error_if_required
