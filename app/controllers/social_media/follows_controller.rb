@@ -2,7 +2,7 @@ require 'social_media/services/follows/create'
 require 'social_media/services/follows/destroy'
 
 module SocialMedia
-  class LikesController < ApplicationController
+  class FollowsController < ApplicationController
     def create
       follow_service::Create.call(params) do |success, failure|
         success.call(&method(:object))
