@@ -28,10 +28,8 @@ module SocialMedia
       update_count(:number_of_follows, :-)
     end
 
-    private
-
     def raise_already_followd_error_if_required
-      raise SocialMedia::Follows::AlreadyExistsError.new("#{owner_type} has already followd that #{target_type}") if owner.followable_objects.exists?(target: target)
+      raise SocialMedia::Follows::AlreadyExistsError.new("#{owner_type} has already followed that #{target_type}") if owner.followable_objects.exists?(target: target)
     end
   end
 end
