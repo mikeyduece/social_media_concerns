@@ -1,17 +1,17 @@
-require 'social_media/services/likes/create'
-require 'social_media/services/likes/destroy'
+require 'social_media/services/follows/create'
+require 'social_media/services/follows/destroy'
 
 module SocialMedia
   class LikesController < ApplicationController
     def create
-      like_service::Create.call(params) do |success, failure|
+      follow_service::Create.call(params) do |success, failure|
         success.call(&method(:object))
         failure.call(&method(:error))
       end
     end
 
     def destroy
-      like_service::Destroy.call(params) do |success, failure|
+      follow_service::Destroy.call(params) do |success, failure|
         success.call(&method(:object))
         failure.call(&method(:error))
       end
@@ -19,8 +19,8 @@ module SocialMedia
 
     private
 
-    def like_service
-      SocialMedia::Services::Likes
+    def follow_service
+      SocialMedia::Services::Follows
     end
 
   end
