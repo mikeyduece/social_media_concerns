@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_04_215711) do
+ActiveRecord::Schema.define(version: 2020_06_04_220945) do
 
   create_table "social_media_blocks", force: :cascade do |t|
     t.string "target_type"
@@ -46,6 +46,18 @@ ActiveRecord::Schema.define(version: 2020_06_04_215711) do
     t.index ["owner_type", "owner_id"], name: "index_social_media_likes_on_owner_type_and_owner_id"
     t.index ["target_id", "target_type", "owner_id", "owner_type"], name: "idx_social_media_likes_on_owner_and_target", unique: true
     t.index ["target_type", "target_id"], name: "index_social_media_likes_on_target_type_and_target_id"
+  end
+
+  create_table "social_media_reports", force: :cascade do |t|
+    t.string "target_type"
+    t.integer "target_id"
+    t.string "owner_type"
+    t.integer "owner_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["owner_type", "owner_id"], name: "index_social_media_reports_on_owner_type_and_owner_id"
+    t.index ["target_id", "target_type", "owner_id", "owner_type"], name: "idx_social_media_reports_on_owner_and_target", unique: true
+    t.index ["target_type", "target_id"], name: "index_social_media_reports_on_target_type_and_target_id"
   end
 
 end
