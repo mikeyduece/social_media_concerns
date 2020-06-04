@@ -1,5 +1,6 @@
 # SocialMedia
-![Gem](https://img.shields.io/gem/dt/social_media?style=plastic)
+![Gem](https://img.shields.io/gem/dt/social_media_concerns?style=plastic)
+![Gem](https://img.shields.io/gem/v/social_media_concerns?style=plastic)
 
 Add social media functionality such as liking, following, reporting, and blocking to your Rails application.
 
@@ -67,6 +68,7 @@ class Item < ApplicationRecord
   
   liker :users
   reporter :users
+  ...
 end 
 ```
 
@@ -80,9 +82,10 @@ The class methods called in the models provide the required relationships, ie:
         - `has_many :liked_posts` 
 - An Item is able to be 'liked' by a user
     - `liker :users, :admins`
-    - This provides the following relationships like above
+    - This provides the following relationships like above to separate the collection types or you may use the `likes` relationship
         - `has_many :liked_by_users`
         - `has_many :liked_by_admins`
+- The `liked_` and `liked_by_` relationships are an example. With the other available modules, the respective names will be interpolated if and when you provide the symbols as arguments to the class methods.
 
 #### Creating SocialMedia Object
 
