@@ -1,4 +1,5 @@
 # SocialMedia
+![Gem](https://img.shields.io/gem/dt/social_media?style=plastic)
 
 Add social media functionality such as liking, following, reporting, and blocking to your Rails application.
 
@@ -83,6 +84,7 @@ The class methods called in the models provide the required relationships, ie:
         - `has_many :liked_by_users`
         - `has_many :liked_by_admins`
 
+#### Creating SocialMedia Object
 
 Simply send `POST` or `DELETE` requests with the the relevant top level key, ie:
 
