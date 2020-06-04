@@ -1,4 +1,5 @@
 require 'social_media/services/likes/create'
+require 'social_media/services/likes/destroy'
 
 module SocialMedia
   class LikesController < ApplicationController
@@ -23,5 +24,4 @@ module SocialMedia
     end
 
   end
-
 end
