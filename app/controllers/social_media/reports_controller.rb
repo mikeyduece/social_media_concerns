@@ -1,7 +1,7 @@
-require 'social_media/services/reports/create'
-require 'social_media/services/reports/destroy'
+require 'social_media_concerns/services/reports/create'
+require 'social_media_concerns/services/reports/destroy'
 
-module SocialMedia
+module SocialMediaConcerns
   class ReportsController < ApplicationController
     def create
       report_service::Create.call(params) do |success, failure|
@@ -20,7 +20,7 @@ module SocialMedia
     private
 
     def report_service
-      SocialMedia::Services::Reports
+      SocialMediaConcerns::Services::Reports
     end
 
   end

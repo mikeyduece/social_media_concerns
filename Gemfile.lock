@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    social_media (0.1.0)
+    social_media_concerns (0.1.0)
       rails (>= 5.0.0)
 
 GEM
@@ -136,7 +136,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  social_media!
+  social_media_concerns!
   sqlite3
 
 BUNDLED WITH

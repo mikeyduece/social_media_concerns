@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  mount SocialMedia::Engine => "/social_media"
+  mount SocialMediaConcerns::Engine => "/social_media_concerns"
 end

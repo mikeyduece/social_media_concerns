@@ -1,6 +1,6 @@
-# SocialMedia
-![Gem](https://img.shields.io/gem/dt/social_media_concerns?style=plastic)
-![Gem](https://img.shields.io/gem/v/social_media_concerns?style=plastic)
+# SocialMediaConcerns
+![Gem](https://img.shields.io/gem/dt/social_media_concerns_concerns?style=plastic)
+![Gem](https://img.shields.io/gem/v/social_media_concerns_concerns?style=plastic)
 
 Add social media functionality such as liking, following, reporting, and blocking to your Rails application.
 
@@ -8,7 +8,7 @@ Add social media functionality such as liking, following, reporting, and blockin
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'social_media'
+gem 'social_media_concerns'
 ```
 
 And then execute:
@@ -18,12 +18,12 @@ $ bundle
 
 Or install it yourself as:
 ```bash
-$ gem install social_media
+$ gem install social_media_concerns
 ```
 
 After installing the gem in your application, you need to copy the migrations from the gem to your application:
 ```bash
-rails social_media:install:migrations
+rails social_media_concerns:install:migrations
 ```
 
 Once the migrations are copied, you can delete any that you do not currently need in your application. If you later decide
@@ -37,7 +37,7 @@ that you want those models/functionality, you can simply rerun the above command
 # config/routes.rb
 
 Rails.application.routes.draw do
-    mount SocialMedia::Engine => '/social_media'
+    mount SocialMediaConcerns::Engine => '/social_media_concerns'
 end
 ```
 
@@ -48,10 +48,10 @@ For example, a User is able to 'follow' other users and 'like' an Item.
 
 ```ruby
 class User < ApplicationRecord
-  include SocialMedia::Concerns::Likeable
-  include SocialMedia::Concerns::Follwable
-  include SocialMedia::Concerns::Blockable
-  include SocialMedia::Concerns::Reportable
+  include SocialMediaConcerns::Concerns::Likeable
+  include SocialMediaConcerns::Concerns::Follwable
+  include SocialMediaConcerns::Concerns::Blockable
+  include SocialMediaConcerns::Concerns::Reportable
 
   likeable :items
   followable :users
@@ -61,10 +61,10 @@ class User < ApplicationRecord
 end
 
 class Item < ApplicationRecord
-  include SocialMedia::Concerns::Likeable
-  include SocialMedia::Concerns::Follwable
-  include SocialMedia::Concerns::Blockable
-  include SocialMedia::Concerns::Reportable
+  include SocialMediaConcerns::Concerns::Likeable
+  include SocialMediaConcerns::Concerns::Follwable
+  include SocialMediaConcerns::Concerns::Blockable
+  include SocialMediaConcerns::Concerns::Reportable
   
   liker :users
   reporter :users
@@ -87,7 +87,7 @@ The class methods called in the models provide the required relationships, ie:
         - `has_many :liked_by_admins`
 - The `liked_` and `liked_by_` relationships are an example. With the other available modules, the respective names will be interpolated if and when you provide the symbols as arguments to the class methods.
 
-#### Creating SocialMedia Object
+#### Creating SocialMediaConcerns Object
 
 Simply send `POST` or `DELETE` requests with the the relevant top level key, ie:
 
@@ -101,7 +101,7 @@ Simply send `POST` or `DELETE` requests with the the relevant top level key, ie:
   }
 }
 ```
-With `"like"` being substituted for the relevant `SocialMedia` module: `like, follow, block, report`
+With `"like"` being substituted for the relevant `SocialMediaConcerns` module: `like, follow, block, report`
  
    - Routes for each are:
      - Like

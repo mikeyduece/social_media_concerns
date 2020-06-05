@@ -1,7 +1,7 @@
-require 'social_media/services/likes/create'
-require 'social_media/services/likes/destroy'
+require 'social_media_concerns/services/likes/create'
+require 'social_media_concerns/services/likes/destroy'
 
-module SocialMedia
+module SocialMediaConcerns
   class LikesController < ApplicationController
     def create
       like_service::Create.call(params) do |success, failure|
@@ -20,7 +20,7 @@ module SocialMedia
     private
 
     def like_service
-      SocialMedia::Services::Likes
+      SocialMediaConcerns::Services::Likes
     end
 
   end

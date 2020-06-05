@@ -1,15 +1,15 @@
 $:.push File.expand_path("lib", __dir__)
 
 # Maintain your gem's version:
-require "social_media/version"
+require "social_media_concerns/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |spec|
-  spec.name        = "social_media"
-  spec.version     = SocialMedia::VERSION
+  spec.name        = "social_media_concerns"
+  spec.version     = SocialMediaConcerns::VERSION
   spec.authors     = ["Mike Heft"]
   spec.email       = ["mikeheft@gmail.com"]
-  spec.homepage    = "https://github.com/mikeyduece/social_media"
+  spec.homepage    = "https://github.com/mikeyduece/social_media_concerns"
   spec.summary     = "Add social media functionality to Rails applications"
   spec.description = "Adds liking, following, reporting, and blocking functionality to Rails applications"
   spec.license     = "MIT"

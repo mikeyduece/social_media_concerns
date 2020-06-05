@@ -1,7 +1,7 @@
-require 'social_media/services/follows/create'
-require 'social_media/services/follows/destroy'
+require 'social_media_concerns/services/follows/create'
+require 'social_media_concerns/services/follows/destroy'
 
-module SocialMedia
+module SocialMediaConcerns
   class FollowsController < ApplicationController
     def create
       follow_service::Create.call(params) do |success, failure|
@@ -20,7 +20,7 @@ module SocialMedia
     private
 
     def follow_service
-      SocialMedia::Services::Follows
+      SocialMediaConcerns::Services::Follows
     end
 
   end

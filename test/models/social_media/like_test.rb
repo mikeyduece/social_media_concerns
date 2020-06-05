@@ -1,6 +1,6 @@
 require 'test_helper'
 
-module SocialMedia
+module SocialMediaConcerns
   class LikeTest < ActiveSupport::TestCase
     # test "the truth" do
     #   assert true

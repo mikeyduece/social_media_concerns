@@ -1,7 +1,7 @@
 require 'test_helper'
 
-class SocialMedia::Test < ActiveSupport::TestCase
+class SocialMediaConcerns::Test < ActiveSupport::TestCase
   test "truth" do
-    assert_kind_of Module, SocialMedia
+    assert_kind_of Module, SocialMediaConcerns
   end
 end

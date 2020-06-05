@@ -1,7 +1,7 @@
-require 'social_media/services/blocks/create'
-require 'social_media/services/blocks/destroy'
+require 'social_media_concerns/services/blocks/create'
+require 'social_media_concerns/services/blocks/destroy'
 
-module SocialMedia
+module SocialMediaConcerns
   class BlocksController < ApplicationController
     def create
       block_service::Create.call(params) do |success, failure|
@@ -20,7 +20,7 @@ module SocialMedia
     private
 
     def block_service
-      SocialMedia::Services::Blocks
+      SocialMediaConcerns::Services::Blocks
     end
 
   end

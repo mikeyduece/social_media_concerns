@@ -1,4 +1,4 @@
-module SocialMedia
+module SocialMediaConcerns
   module ApplicationHelper
   end
 end
